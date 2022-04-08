@@ -1,0 +1,26 @@
+export const COLORS = {
+  gray: [
+    { name: "gray50", value: "#f9fafb" },
+    { name: "gray100", value: "#f3f4f6" },
+    { name: "gray200", value: "#e5e7eb" },
+    { name: "gray300", value: "#d1d5db" },
+    { name: "gray400", value: "#9ca3af" },
+    { name: "gray500", value: "#6b7280" },
+    { name: "gray600", value: "#4b5563" },
+    { name: "gray700", value: "#374151" },
+    { name: "gray800", value: "#1f2937" },
+    { name: "gray900", value: "#111827" },
+  ],
+  blue: [
+    { name: "blue50", value: "#eff6ff" },
+    { name: "blue100", value: "#dbeafe" },
+    { name: "blue200", value: "#bfdbfe" },
+    { name: "blue300", value: "#93c5fd" },
+    { name: "blue400", value: "#60a5fa" },
+    { name: "blue500", value: "#3b82f6" },
+    { name: "blue600", value: "#2563eb" },
+    { name: "blue700", value: "#1d4ed8" },
+    { name: "blue800", value: "#1e40af" },
+    { name: "blue900", value: "#1e3a8a" },
+  ],
+};

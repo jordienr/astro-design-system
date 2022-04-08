@@ -1,0 +1,63 @@
+---
+import { getLanguageFromURL } from '../../languages.ts';
+import { SIDEBAR } from '../../config.ts';
+const { currentPage } = Astro.props;
+const currentPageMatch = currentPage.slice(1);
+const langCode = getLanguageFromURL(currentPage);
+// SIDEBAR is a flat array. Group it by sections to properly render.
+const sidebarSections = SIDEBAR[langCode].reduce((col, item, i) => {
+	// If the first item is not a section header, create a new container section.
+	if (i === 0) {
+		if (!item.header) {
+			const pesudoSection = { text: "" };
+			col.push({ ...pesudoSection, children: [] });
+		}
+	}
+	if (item.header) {
+		col.push({ ...item, children: [] });
+	} else {
+		col[col.length - 1].children.push(item);
+	}
+	return col;
+}, []);
+
+const isCurrentPage = (item) => {
+	if (item.link) {
+		return item.link.includes(currentPageMatch);
+	}
+	return false;
+};
+---
+
+<nav aria-labelledby="grid-left" class="max-w-sm p-4">
+	<ul>
+		{sidebarSections.map((section) => (
+			<li>
+				<div>
+					<h2 class="text-slate-500 font-medium uppercase text-sm my-4">{section.text}</h2>
+					<ul>
+						{section.children.map((child) => (
+							<li 
+								class="py-1 px-2  my-1 rounded-lg hover:bg-slate-100"
+							>
+								<a class={isCurrentPage(child) ? 'bg-slate-100 font-bold' : ''} href={`${Astro.site.pathname}${child.link}`} aria-current={`${isCurrentPage(child) ? 'page' : 'false'}`}>
+									{child.text}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			</li>
+		))}
+	</ul>
+</nav>
+
+<script is:inline>
+	window.addEventListener('DOMContentLoaded', (event) => {
+		var target = document.querySelector('[aria-current="page"]');
+		if (target && target.offsetTop > window.innerHeight - 100) {
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+		}
+	});
+</script>
+
