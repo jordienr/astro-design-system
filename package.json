@@ -16,7 +16,8 @@
     "@types/react": "^17.0.43",
     "preact": "^10.7.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "vue": "3.2"
   },
   "devDependencies": {
     "@astrojs/preact": "^0.0.2",

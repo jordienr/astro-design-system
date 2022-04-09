@@ -22,12 +22,10 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 		<title>{content.title ? `${content.title} 🚀 ${CONFIG.SITE.title}` : CONFIG.SITE.title}</title>
 	</head>
 
-	<body class="">
+	<body class="min-h-screen flex flex-col">
 		<Header {currentPage} />
-		<main class="max-w-6xl mx-auto flex">
-			<aside title="Site Navigation" class="border-r">
-				<LeftSidebar {currentPage} />
-			</aside>
+		<main class="max-w-7xl  mx-auto w-full flex-grow flex">
+			<LeftSidebar {currentPage} />
 			<div id="grid-main" class="p-4">
 				<PageContent {content} {githubEditUrl}>
 					<slot />

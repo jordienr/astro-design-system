@@ -27,20 +27,30 @@ const isCurrentPage = (item) => {
 	}
 	return false;
 };
----
 
-<nav aria-labelledby="grid-left" class="max-w-sm p-4">
+const getLinkClasses = (link) => {
+	const baseClasses = "block py-2 px-6  my-1 transition-colors border-l hover:border-slate-400 text-slate-500 hover:text-slate-900"
+
+	if (isCurrentPage(link)) {
+		return baseClasses + " border-slate-500 text-slate-900";
+	} else {
+		return baseClasses;
+	}
+}
+---
+<aside title="Site Navigation">
+<nav aria-labelledby="grid-left" class="w-64 p-4 border-r">
 	<ul>
 		{sidebarSections.map((section) => (
 			<li>
 				<div>
-					<h2 class="text-slate-500 font-medium uppercase text-sm my-4">{section.text}</h2>
+					<h2 class="text-slate-600 font-bold capitalize text-sm my-4">{section.text}</h2>
 					<ul>
 						{section.children.map((child) => (
-							<li 
-								class="py-1 px-2  my-1 rounded-lg hover:bg-slate-100"
-							>
-								<a class={isCurrentPage(child) ? 'bg-slate-100 font-bold' : ''} href={`${Astro.site.pathname}${child.link}`} aria-current={`${isCurrentPage(child) ? 'page' : 'false'}`}>
+							<li>
+								<a
+								class={` ${getLinkClasses(child)}`}
+								 href={`${Astro.site.pathname}${child.link}`} aria-current={`${isCurrentPage(child) ? 'page' : 'false'}`}>
 									{child.text}
 								</a>
 							</li>
@@ -51,6 +61,7 @@ const isCurrentPage = (item) => {
 		))}
 	</ul>
 </nav>
+</aside>
 
 <script is:inline>
 	window.addEventListener('DOMContentLoaded', (event) => {
