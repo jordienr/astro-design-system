@@ -11,12 +11,9 @@ const { currentPage } = Astro.props;
 const lang = currentPage && getLanguageFromURL(currentPage);
 ---
 
-<header class="bg-slate-900 text-white">
+<header class="bg-slate-900 text-white p-3">
 	<SkipToContent />
 	<nav title="Top Navigation" class="flex items-center max-w-7xl mx-auto">
-		<div class="p-4">
-			<SidebarToggle client:idle />
-		</div>
 		<div>
 			<a class="text-lg font-medium" href="/">
 				<h1>{CONFIG.SITE.title ?? "Documentation"}</h1>

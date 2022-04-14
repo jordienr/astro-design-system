@@ -7,7 +7,7 @@ import PageContent from '../components/PageContent/PageContent.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
 import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
 import * as CONFIG from '../config';
-import '../styles/main.css';
+import '../styles/main.scss';
 
 const { content = {} } = Astro.props;
 const currentPage = new URL(Astro.request.url).pathname;
@@ -22,11 +22,11 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 		<title>{content.title ? `${content.title} 🚀 ${CONFIG.SITE.title}` : CONFIG.SITE.title}</title>
 	</head>
 
-	<body class="min-h-screen flex flex-col">
+	<body class="min-h-screen flex flex-col bg-slate-100">
 		<Header {currentPage} />
 		<main class="max-w-7xl  mx-auto w-full flex-grow flex">
 			<LeftSidebar {currentPage} />
-			<div id="grid-main" class="p-4 flex-grow">
+			<div id="grid-main" class="py-4 px-8 flex-grow">
 				<PageContent {content} {githubEditUrl}>
 					<slot />
 				</PageContent>

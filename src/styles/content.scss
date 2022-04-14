@@ -1,0 +1,32 @@
+.content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.77rem;
+  }
+  h1 {
+    font-size: 22pt;
+    font-weight: 400;
+  }
+  h2 {
+    font-size: 17pt;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: 15pt;
+    font-weight: 600;
+  }
+  h4 {
+    font-size: 13pt;
+  }
+  p {
+    margin-top: 0.77rem;
+    color: theme("colors.slate.600");
+  }
+  a {
+    color: theme("colors.blue.600");
+  }
+}
