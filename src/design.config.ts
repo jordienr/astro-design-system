@@ -36,3 +36,17 @@ export const COLORS = {
     { name: "900", value: "#1e7a6e" },
   ],
 };
+
+export const TYPOGRAPHY = {
+  fontFamily: "Inter",
+  scale: [
+    { name: "h1", size: "2rem", weight: "400" },
+    { name: "h2", size: "1.66rem", weight: "400" },
+    { name: "h3", size: "1.33rem", weight: "400" },
+    { name: "h4", size: "1rem", weight: "600" },
+    { name: "h5", size: "1rem", weight: "400" },
+    { name: "body", size: "1rem", weight: "400" },
+    { name: "button", size: "1rem", weight: "400" },
+    { name: "caption", size: "0.75rem", weight: "400" },
+  ],
+};

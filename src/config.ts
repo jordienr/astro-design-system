@@ -38,6 +38,7 @@ export const SIDEBAR = {
     { text: "Section Header", header: true },
     { text: "Introduction", link: "en/introduction" },
     { text: "Colors", link: "en/colors" },
+    { text: "Typography", link: "en/typography" },
     { text: "Page 2", link: "en/page-2" },
     { text: "Page 3", link: "en/page-3" },
 

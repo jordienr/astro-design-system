@@ -26,7 +26,7 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 		<Header {currentPage} />
 		<main class="max-w-7xl  mx-auto w-full flex-grow flex">
 			<LeftSidebar {currentPage} />
-			<div id="grid-main" class="p-4">
+			<div id="grid-main" class="p-4 flex-grow">
 				<PageContent {content} {githubEditUrl}>
 					<slot />
 				</PageContent>
