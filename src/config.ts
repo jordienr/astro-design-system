@@ -29,5 +29,6 @@ export const SIDEBAR = {
     { text: "Components", header: true },
     { text: "Button", link: "en/buttons" },
     { text: "Input", link: "en/input" },
+    { text: "Table", link: "en/table" },
   ],
 };
