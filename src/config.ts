@@ -18,20 +18,6 @@ export const KNOWN_LANGUAGES = {
   English: "en",
 };
 
-// Uncomment this to add an "Edit this page" button to every page of documentation.
-// export const GITHUB_EDIT_URL = `https://github.com/withastro/astro/blob/main/docs/`;
-
-// Uncomment this to add an "Join our Community" button to every page of documentation.
-// export const COMMUNITY_INVITE_URL = `https://astro.build/chat`;
-
-// Uncomment this to enable site search.
-// See "Algolia" section of the README for more information.
-// export const ALGOLIA = {
-//   indexName: 'XXXXXXXXXX',
-//   appId: 'XXXXXXXXXX',
-//   apiKey: 'XXXXXXXXXX',
-// }
-
 export const SIDEBAR = {
   en: [
     { text: "Core", header: true },
@@ -39,8 +25,6 @@ export const SIDEBAR = {
     { text: "Colors", link: "en/colors" },
     { text: "Typography", link: "en/typography" },
     { text: "Shadows", link: "en/shadows" },
-    // { text: "Page 2", link: "en/page-2" },
-    // { text: "Page 3", link: "en/page-3" },
 
     { text: "Components", header: true },
     { text: "Button", link: "en/buttons" },
