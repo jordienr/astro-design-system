@@ -4,19 +4,21 @@ description: Docs intro
 layout: ../../layouts/MainLayout.astro
 ---
 
-## Welcome to Astro
+# Astro Design System Theme
 
-This is the Astro Design System template. You can customize it however you want.
+Astro Design System is the easiest way to start your our design system. Since Astro is compatible with many frameworks, you can import your components and document them right in the markdown files.
 
-This template uses tailwind, which in itself is highly customizable if you want to give it your brand's look & feel.
+## Getting started
 
 ### Adding new sections
 
-To add a new section, create an astro or markdown file in the `src/pages/[lang]/` directory.
+To add a new section, create an astro or markdown file in the `src/pages/[lang]/` directory. To show the section on the left side navigation, add it to the navigation config file at `src/config.ts`.
 
-### Customizing defaults (colors, typography, shadows...)
+### Customizing Core section (colors, typography, shadows...)
 
 If you want to customize the default colors, typography or shadows you can find the configuration file at `src/config/design.config.ts`.
+
+Feel free to add new pages to the Core section
 
 ### Customizing the page layout
 
