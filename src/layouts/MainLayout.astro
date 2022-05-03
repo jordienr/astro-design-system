@@ -2,7 +2,6 @@
 import HeadCommon from '../components/HeadCommon.astro';
 import HeadSEO from '../components/HeadSEO.astro';
 import Header from '../components/Header/Header.astro';
-import Footer from '../components/Footer/Footer.astro';
 import PageContent from '../components/PageContent/PageContent.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
 import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
@@ -12,7 +11,6 @@ import '../styles/main.scss';
 const { content = {} } = Astro.props;
 const currentPage = new URL(Astro.request.url).pathname;
 const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
-const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + currentFile;
 ---
 
 <html dir={content.dir ?? 'ltr'} lang={content.lang ?? 'en-us'} class="initial">
@@ -22,18 +20,26 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 		<title>{content.title ? `${content.title} 🚀 ${CONFIG.SITE.title}` : CONFIG.SITE.title}</title>
 	</head>
 
-	<body class="min-h-screen flex flex-col bg-slate-100">
-		<Header {currentPage} />
-		<main class="max-w-7xl  mx-auto w-full flex-grow flex">
-			<LeftSidebar {currentPage} />
-			<div id="grid-main" class="py-4 px-8 flex-grow">
-				<PageContent {content} {githubEditUrl}>
-					<slot />
-				</PageContent>
+	<body class="bg-slate-100 overflow-hidden">
+		<div class="fixed w-full">
+			<Header currentPage={currentPage} />
+		</div>
+		<div class="grid grid-cols-12 max-h-screen overflow-hidden">
+			<div class="col-span-3 flex  overflow-auto max-h-screen mt-12">
+				<div class="ml-auto">
+					<LeftSidebar currentPage={currentPage} />
+				</div>
 			</div>
-			<!-- <aside id="grid-right" class="grid-sidebar" title="Table of Contents">
-				<RightSidebar {content} {githubEditUrl} />
-			</aside> -->
-		</main>
+			<main class="py-4 px-8 pb-32 col-span-6  overflow-auto  max-h-screen  mt-12">
+				<div>
+					<PageContent content={content}>
+						<slot />
+					</PageContent>
+				</div>
+			</main>
+			<div class="col-span-3">
+				<RightSidebar content={content} />
+			</div>
+		</div>
 	</body>
 </html>

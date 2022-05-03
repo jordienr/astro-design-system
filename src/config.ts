@@ -1,5 +1,5 @@
 export const SITE = {
-  title: "Astro Design System",
+  title: "👽 Astro Design System",
   description: "Template for design systems",
   defaultLanguage: "en_US",
 };
@@ -43,6 +43,7 @@ export const SIDEBAR = {
     // { text: "Page 3", link: "en/page-3" },
 
     { text: "Components", header: true },
-    { text: "Page 4", link: "en/page-4" },
+    { text: "Button", link: "en/buttons" },
+    { text: "Input", link: "en/input" },
   ],
 };

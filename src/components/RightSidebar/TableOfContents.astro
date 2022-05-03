@@ -1,0 +1,13 @@
+---
+	const { headers } = Astro.props;
+---
+
+<ul class="flex flex-col gap-4 mt-24">
+	{ headers.map(({ slug, text }) => {
+		return (
+		<li class="text-slate-600 hover:text-slate-900">
+			<a href={`#${slug}`}>{text}</a>
+		</li>
+		) 
+	}) }
+</ul>

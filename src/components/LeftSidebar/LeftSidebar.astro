@@ -39,28 +39,28 @@ const getLinkClasses = (link) => {
 }
 ---
 <aside title="Site Navigation">
-<nav aria-labelledby="grid-left" class="w-64 p-4 border-r">
-	<ul>
-		{sidebarSections.map((section) => (
-			<li>
-				<div>
-					<h2 class="text-slate-600 font-bold capitalize text-sm my-4">{section.text}</h2>
-					<ul>
-						{section.children.map((child) => (
-							<li>
-								<a
-								class={` ${getLinkClasses(child)}`}
-								 href={`${Astro.site.pathname}${child.link}`} aria-current={`${isCurrentPage(child) ? 'page' : 'false'}`}>
-									{child.text}
-								</a>
-							</li>
-						))}
-					</ul>
-				</div>
-			</li>
-		))}
-	</ul>
-</nav>
+	<nav aria-labelledby="grid-left" class="w-64 p-4 border-r">
+		<ul>
+			{sidebarSections.map((section) => (
+				<li>
+					<div>
+						<h2 class="text-slate-600 font-bold capitalize text-sm my-4">{section.text}</h2>
+						<ul>
+							{section.children.map((child) => (
+								<li>
+									<a
+									class={` ${getLinkClasses(child)}`}
+									href={`${Astro.site.pathname}${child.link}`} aria-current={`${isCurrentPage(child) ? 'page' : 'false'}`}>
+										{child.text}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				</li>
+			))}
+		</ul>
+	</nav>
 </aside>
 
 <script is:inline>
