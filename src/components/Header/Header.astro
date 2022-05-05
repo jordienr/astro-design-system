@@ -1,27 +1,28 @@
 ---
-import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from '../../languages.ts';
 import * as CONFIG from '../../config.ts';
 import SkipToContent from './SkipToContent.astro';
-import LanguageSelect from './LanguageSelect.tsx';
-import Search from './Search.tsx';
 
 const { currentPage } = Astro.props;
-const lang = currentPage && getLanguageFromURL(currentPage);
 ---
 
-<header class="p-3 bg-slate-800  text-white">
+<header class="p-3 bg-slate-100 bg-opacity-80 backdrop-blur-md border-b text-slate-900">
 	<SkipToContent />
-	<nav title="Top Navigation">
+	<nav title="Top Navigation" class="max-w-7xl mx-auto flex justify-between px-4">
 		<div>
 			<a class="text-lg font-medium" href="/">
-				<h1>{CONFIG.SITE.title ?? "Documentation"}</h1>
+				<h1>
+					{CONFIG.SITE.title ?? "Documentation"}
+				</h1>
 			</a>
 		</div>
-		{KNOWN_LANGUAGE_CODES.length > 1 && <LanguageSelect lang={lang} client:idle />}
-		{CONFIG.ALGOLIA && (
-			<div class="search-item">
-				<Search client:idle />
-			</div>
-		)}
+		<button onclick="toggleDarkMode()">theme</button>
 	</nav>
 </header>
+
+<script is:inline>
+	function toggleDarkMode() {
+		const body = document.body;
+		body.classList.toggle('dark');
+		console.log('dark mode toggled');
+	}
+</script>

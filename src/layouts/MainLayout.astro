@@ -10,7 +10,7 @@ import '../styles/main.scss';
 
 const { content = {} } = Astro.props;
 const currentPage = new URL(Astro.request.url).pathname;
-const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
+// const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
 ---
 
 <html dir={content.dir ?? 'ltr'} lang={content.lang ?? 'en-us'} class="initial">
@@ -30,7 +30,7 @@ const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
 					<LeftSidebar currentPage={currentPage} />
 				</div>
 			</div>
-			<main class="py-4 px-8 pb-32 col-span-6  overflow-auto  max-h-screen  mt-12">
+			<main class="py-4 px-8 pb-32 col-span-6  overflow-auto  max-h-screen pt-12">
 				<div>
 					<PageContent content={content}>
 						<slot />

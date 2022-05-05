@@ -12,7 +12,30 @@ Astro Design System is the easiest way to start your our design system. Since As
 
 ### Adding new sections
 
-To add a new section, create an astro or markdown file in the `src/pages/[lang]/` directory. To show the section on the left side navigation, add it to the navigation config file at `src/config.ts`.
+Although it's not required, you can create folders for new sections.
+
+To show the section on the left side navigation, add it to the navigation config file at `src/config.ts`.
+
+Example:
+
+```js
+export const SIDEBAR = [
+    { text: "Core", header: true },
+    { text: "Introduction", link: "/core/introduction" },
+    ...,
+    { text: "Components", header: true },
+    { text: "Buttons", link: "/components/buttons" },
+    ...,
+    { text: "New section", header: true },
+    { text: "New component", link: "/new-section/new-component.md" },
+];
+```
+
+### Adding new pages
+
+To add new pages just create an .astro or markdown file in `src/pages/[section]/my-page.md`. Remember to add it to the navigation config in `src/config.ts` so it shows up in the left side navigation.
+
+You're free to organize the pages however you want.
 
 ### Customizing Core section (colors, typography, shadows...)
 
