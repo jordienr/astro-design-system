@@ -30,9 +30,14 @@
     color: theme("colors.blue.600");
   }
 
-  .component-wrapper {
+  pre.astro-code {
+    margin: 0.5rem;
+  }
+
+  .component-preview {
     padding: 4rem;
     display: flex;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
     background-image: url("/grid_dot.svg");

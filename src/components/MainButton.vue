@@ -13,11 +13,13 @@ import { defineProps } from "vue";
 const props = defineProps<{
   primary: boolean;
   secondary: boolean;
+  text: boolean;
 }>();
 
 const classes = {
   "text-white bg-blue-500 hover:bg-opacity-80": props.primary,
   "text-blue-600 border-blue-500 border": props.secondary,
+  "text-blue-500 hover:bg-opacity-80 shadow-md": props.text,
 };
 </script>
 

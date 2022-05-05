@@ -7,12 +7,10 @@ setup: |
 
 ## Input text
 
-<div class="component-wrapper">
+<div class="component-preview">
     <MainInput label="Name">
 </div>
 
-### Code
-
 ```js
-<input type="text" value="Hello world!"></input>
+<MainInput type="text" value="Hello world!"></MainInput>
 ```

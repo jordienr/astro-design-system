@@ -18,17 +18,16 @@ export const KNOWN_LANGUAGES = {
   English: "en",
 };
 
-export const SIDEBAR = {
-  en: [
-    { text: "Core", header: true },
-    { text: "Introduction", link: "en/introduction" },
-    { text: "Colors", link: "en/colors" },
-    { text: "Typography", link: "en/typography" },
-    { text: "Shadows", link: "en/shadows" },
+export const SIDEBAR = [
+  { text: "Core", header: true },
+  { text: "Introduction", link: "/core/introduction" },
+  { text: "Colors", link: "/core/colors" },
+  { text: "Typography", link: "/core/typography" },
+  { text: "Shadows", link: "/core/shadows" },
 
-    { text: "Components", header: true },
-    { text: "Button", link: "en/buttons" },
-    { text: "Input", link: "en/input" },
-    { text: "Table", link: "en/table" },
-  ],
-};
+  { text: "Components", header: true },
+  { text: "Buttons", link: "/components/buttons" },
+  { text: "Input", link: "/components/input" },
+  { text: "Status pills", link: "/components/status-pill" },
+  { text: "Table", link: "/components/table" },
+];

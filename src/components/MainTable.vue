@@ -1,6 +1,6 @@
 <template>
   <table class="table-auto text-left border bg-white shadow-md">
-    <thead>
+    <thead class="bg-slate-800 text-white">
       <tr class="border">
         <th class="px-4 py-2">id</th>
         <th class="px-4 py-2">Name</th>
@@ -8,8 +8,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="border" v-for="row in tableData">
-        <td class="px-4 py-2" v-for="key in Object.keys(row)">
+      <tr class="border" v-for="row in tableData" :key="row">
+        <td class="px-4 py-2" v-for="key in Object.keys(row)" :key="key">
           {{ row[key] }}
         </td>
       </tr>

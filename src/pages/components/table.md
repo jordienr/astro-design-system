@@ -7,7 +7,7 @@ setup: |
 
 ## Primary table
 
-<div class="component-wrapper">
+<div class="component-preview">
     <MainTable></MainTable>
 </div>
 
