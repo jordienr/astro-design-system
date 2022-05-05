@@ -1,5 +1,6 @@
 ---
 import { getLanguageFromURL } from '../../languages.ts';
+import { Debug } from 'astro/components'
 import { SIDEBAR } from '../../config.ts';
 const { currentPage } = Astro.props;
 const currentPageMatch = currentPage.slice(1);
@@ -21,6 +22,27 @@ const sidebarSections = SIDEBAR[langCode].reduce((col, item, i) => {
 	return col;
 }, []);
 
+const pagesGlob = await Astro.glob('../../pages/**');
+
+const navigation = {}
+
+pagesGlob.forEach(page => {
+	if (!page.url) return null;
+
+	const folder = page.url.split('/')[1];
+	const fileName = page.url.split('/')[2];
+
+
+	navigation[folder] = navigation[folder] || []
+
+	navigation[folder].push({
+		text: fileName,
+		url: page.url
+	})
+})
+
+
+
 const isCurrentPage = (item) => {
 	if (item.link) {
 		return item.link.includes(currentPageMatch);
@@ -39,7 +61,14 @@ const getLinkClasses = (link) => {
 }
 ---
 <aside title="Site Navigation">
-	<nav aria-labelledby="grid-left" class="w-64 p-4 border-r">
+	<Debug content={navigation} />
+	{ Object.keys(navigation).map(section => {
+		<h2>{section}</h2>
+		{ navigation[section].map(link => {
+			<a href={link.url} class={getLinkClasses(link)}>{link.text}</a>
+		})}
+	})}
+	<!-- <nav aria-labelledby="grid-left" class="w-64 p-4 border-r">
 		<ul>
 			{sidebarSections.map((section) => (
 				<li>
@@ -60,7 +89,7 @@ const getLinkClasses = (link) => {
 				</li>
 			))}
 		</ul>
-	</nav>
+	</nav> -->
 </aside>
 
 <script is:inline>
