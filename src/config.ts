@@ -1,7 +1,10 @@
 export const SITE = {
-  title: "👽 Astro Design System",
+  title: "🎨 Astro Design System",
   description: "Astro theme for design systems",
   defaultLanguage: "en_US",
+  twitter: "@jordienr",
+  github: "jordienr",
+  linkedin: "jordienric",
 };
 
 export const OPEN_GRAPH = {

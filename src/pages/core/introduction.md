@@ -55,6 +55,14 @@ To get started check how the `MainButton` component is used in the `src/pages/en
 
 You can import your component library or create your own and document it easily.
 
+### .component-preview utility
+
+There's a class called `.component-preview` that you can use to wrap your component in a grid, and it will look like this:
+
+<div class="component-preview">
+    <button class="text-white bg-blue-500 px-4 py-2 rounded-md">Your component</button>
+</div>
+
 ### Have fun!
 
 Astro Design System template was made by **[@jordienr](https://twitter.com/jordienr)** for personal and commercial use.

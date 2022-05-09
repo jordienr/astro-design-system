@@ -2,9 +2,9 @@
 import HeadCommon from '../components/HeadCommon.astro';
 import HeadSEO from '../components/HeadSEO.astro';
 import Header from '../components/Header/Header.astro';
-import PageContent from '../components/PageContent/PageContent.astro';
-import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
-import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
+import PageContent from '../components/PageContent.astro';
+import LeftSidebar from '../components/LeftSidebar.astro';
+import RightSidebar from '../components/RightSidebar.astro';
 import * as CONFIG from '../config';
 import '../styles/main.scss';
 
@@ -21,16 +21,16 @@ const currentPage = new URL(Astro.request.url).pathname;
 	</head>
 
 	<body class="bg-slate-100">
-		<div class="fixed w-full">
+		<div class="sticky top-0 w-full">
 			<Header currentPage={currentPage} />
 		</div>
-		<div class="grid grid-cols-12 max-h-screen overflow-hidden">
-			<div class="col-span-3 flex  overflow-auto max-h-screen mt-12">
+		<div class="grid grid-cols-12">
+			<div class="col-span-3 sticky top-0 mt-12 pt-12 h-screen flex">
 				<div class="ml-auto">
 					<LeftSidebar currentPage={currentPage} />
 				</div>
 			</div>
-			<main class="py-4 px-8 pb-32 col-span-6  overflow-auto  max-h-screen pt-12">
+			<main class="py-4 px-8 pb-32 col-span-6  overflow-auto">
 				<div>
 					<PageContent content={content}>
 						<slot />

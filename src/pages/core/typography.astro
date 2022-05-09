@@ -1,5 +1,4 @@
 ---
-    import { Debug } from 'astro/components'
     import MainLayout from '../../layouts/MainLayout.astro'
     import { TYPOGRAPHY } from '../../design.config'
 
@@ -8,21 +7,21 @@
     }
 ---
 
-    <MainLayout>
-        <h1>Typography</h1>
-        <div class="w-full">
-        {
-            TYPOGRAPHY.scale.map((item) => (
-                <div class="mt-6 border-t py-4">
-                    <p style={getStyle(item)}>Hello world</p>
-                    <div class="flex gap-6 text-slate-500 font-mono">
-                        <span>{item.name}</span>
-                        <span>weight: {item.weight}</span>
-                        <span>size: {item.size}</span>
-                    </div>
+<MainLayout>
+    <h1>Typography</h1>
+    <div class="w-full">
+    {
+        TYPOGRAPHY.scale.map((item) => (
+            <div class="mt-6 border-t py-4">
+                <p style={getStyle(item)}>Hello world</p>
+                <div class="flex gap-6 text-slate-500 font-mono">
+                    <span>{item.name}</span>
+                    <span>weight: {item.weight}</span>
+                    <span>size: {item.size}</span>
                 </div>
-            ))
-        }
-        </div>
+            </div>
+        ))
+    }
+    </div>
 
-    </MainLayout>
+</MainLayout>
