@@ -25,7 +25,7 @@ const currentPage = new URL(Astro.request.url).pathname;
 			<Header currentPage={currentPage} />
 		</div>
 		<div class="grid grid-cols-12">
-			<div class="col-span-3 sticky top-0 mt-12 pt-12 h-screen flex">
+			<div class="col-span-3 sticky top-0 pt-12 h-screen flex">
 				<div class="ml-auto">
 					<LeftSidebar currentPage={currentPage} />
 				</div>
@@ -37,7 +37,7 @@ const currentPage = new URL(Astro.request.url).pathname;
 					</PageContent>
 				</div>
 			</main>
-			<div class="col-span-3">
+			<div class="col-span-3 sticky top-0 h-screen flex">
 				<RightSidebar content={content} />
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 export const SITE = {
-  title: "🎨 Astro Design System",
-  description: "Astro theme for design systems",
+  title: "Astro Design System",
+  description: "Astro theme to build your design system fast.",
   defaultLanguage: "en_US",
   twitter: "@jordienr",
   github: "jordienr",
@@ -29,4 +29,7 @@ export const SIDEBAR = [
   { text: "Input", link: "/components/input" },
   { text: "Status pills", link: "/components/status-pill" },
   { text: "Table", link: "/components/table" },
+
+  { text: "Patterns", header: true },
+  { text: "Introduction", link: "/patterns/introduction" },
 ];
