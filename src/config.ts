@@ -4,7 +4,7 @@ export const SITE = {
   defaultLanguage: "en_US",
   twitter: "@jordienr",
   github: "jordienr",
-  linkedin: "",
+  linkedin: "linkedinUsername",
 };
 
 export const OPEN_GRAPH = {
