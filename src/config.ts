@@ -4,17 +4,15 @@ export const SITE = {
   defaultLanguage: "en_US",
   twitter: "@jordienr",
   github: "jordienr",
-  linkedin: "jordienric",
+  linkedin: "",
 };
 
 export const OPEN_GRAPH = {
   image: {
     src: "",
-    alt:
-      "astro logo on a starry expanse of space," +
-      " with a purple saturn-like planet floating in the right foreground",
+    alt: "",
   },
-  twitter: "@jordienr",
+  twitter: "",
 };
 
 export const SIDEBAR = [

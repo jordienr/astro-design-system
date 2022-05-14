@@ -50,7 +50,7 @@ export const COLORS = {
 };
 
 export const TYPOGRAPHY = {
-  fontFamily: "Inter",
+  fontFamily: "Inter, system",
   scale: [
     { name: "h1", size: "22pt", weight: "400" },
     { name: "h2", size: "17pt", weight: "500" },
