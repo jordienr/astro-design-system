@@ -2,7 +2,7 @@
   <span class="px-3 py-1 rounded-xl" :class="classes"><slot></slot></span>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   props: {
     info: {

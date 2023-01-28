@@ -10,13 +10,13 @@ import '../styles/main.scss';
 
 const { content = {} } = Astro.props;
 const currentPage = new URL(Astro.request.url).pathname;
-// const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
+// const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.mdx`;
 ---
 
 <html dir={content.dir ?? 'ltr'} lang={content.lang ?? 'en-us'} class="initial">
 	<head>
 		<HeadCommon />
-		<HeadSEO {content} canonicalURL={Astro.canonicalURL} />
+		<HeadSEO {content} canonicalURL={Astro.url} />
 		<title>{content.title ? `${content.title} 🚀 ${CONFIG.SITE.title}` : CONFIG.SITE.title}</title>
 	</head>
 

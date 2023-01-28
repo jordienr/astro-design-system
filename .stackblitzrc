@@ -1,5 +1,5 @@
 {
-  "startCommand": "npm start",
+  "startCommand": "pnpm install && pnpm up --latest && pnpm dev",
   "env": {
     "ENABLE_CJS_IMPORTS": true
   }

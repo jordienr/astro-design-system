@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="border" v-for="row in tableData" :key="row">
+      <tr class="border" v-for="row in tableData" :key="row.id">
         <td class="px-4 py-2" v-for="key in Object.keys(row)" :key="key">
           {{ row[key] }}
         </td>
