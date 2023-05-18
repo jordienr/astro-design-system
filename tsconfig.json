@@ -1,9 +1,12 @@
 {
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.d.ts"],
   "compilerOptions": {
-    "target": "es2020",
+    "target": "esnext",
+    "useDefineForClassFields": true,
     "module": "esnext",
-    "jsx": "preserve"
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "allowJs": true,
+    "types": ["vite/client"]
   },
-  "moduleResolution": "node",
-  "types": ["vite/client"]
 }

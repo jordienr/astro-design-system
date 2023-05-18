@@ -4,6 +4,10 @@ description: Docs intro
 layout: ../../layouts/MainLayout.astro
 ---
 
+# UPDATED to Astro 2
+
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/astrosysdoc-example?file=README.md)
+
 # Astro Design System Theme
 
 Astro Design System is the easiest way to start your our design system. Since Astro is compatible with many frameworks, you can import your components and document them right in the markdown files.
